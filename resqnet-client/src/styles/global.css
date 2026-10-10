@@ -1,0 +1,26 @@
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

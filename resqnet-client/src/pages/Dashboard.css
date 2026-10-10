@@ -1,0 +1,967 @@
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-page {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 30px 32px 45px;
+
+  box-sizing: border-box;
+
+  color: #e5e7eb;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.dashboard-eyebrow {
+  margin: 0 0 7px;
+
+  color: #60a5fa;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.dashboard-header > div > p:last-child {
+  margin: 8px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   CONNECTION BADGE
+========================================= */
+
+.connection-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+.connection-online {
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  background: rgba(34, 197, 94, 0.08);
+  color: #4ade80;
+}
+
+.connection-offline {
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  background: rgba(245, 158, 11, 0.08);
+  color: #fbbf24;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-bottom: 18px;
+}
+
+.dashboard-stat-card {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 16px;
+
+  border: 1px solid #1e293b;
+  border-radius: 11px;
+
+  background: #0f172a;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.dashboard-stat-card:hover {
+  border-color: #334155;
+  background: #111827;
+}
+
+
+/* =========================================
+   STAT ICON
+========================================= */
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+}
+
+.stat-blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+}
+
+.stat-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+}
+
+.stat-orange {
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+}
+
+.stat-red {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+
+/* =========================================
+   STAT TEXT
+========================================= */
+
+.dashboard-stat-card > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.dashboard-stat-card span {
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.dashboard-stat-card strong {
+  color: #e2e8f0;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stat-safe {
+  color: #4ade80 !important;
+}
+
+.stat-danger {
+  color: #f87171 !important;
+}
+
+
+/* =========================================
+   MAIN GRID
+========================================= */
+
+.dashboard-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.6fr)
+    minmax(280px, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   SOS CARD
+========================================= */
+
+.sos-card {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 22px;
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(127, 29, 29, 0.28),
+      rgba(15, 23, 42, 0.95)
+    );
+}
+
+.sos-content {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.sos-icon {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.sos-label {
+  margin: 0 0 5px;
+
+  color: #f87171;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.sos-content h2 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.sos-content p:last-child {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   SOS BUTTON
+========================================= */
+
+.sos-button {
+  flex-shrink: 0;
+
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 16px;
+
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+
+  background: #ef4444;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.sos-button:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 20px rgba(239, 68, 68, 0.18);
+}
+
+.sos-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   SAFETY NETWORK CARD
+========================================= */
+
+.safety-network-card {
+  min-width: 0;
+
+  padding: 19px;
+
+  border: 1px solid #1e293b;
+  border-radius: 13px;
+
+  background: #0f172a;
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.section-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 17px;
+}
+
+.section-card-header h2 {
+  margin: 0 0 5px;
+
+  color: #f1f5f9;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.section-card-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+.section-card-header > svg {
+  color: #60a5fa;
+}
+
+
+/* =========================================
+   NETWORK INFO
+========================================= */
+
+.network-info {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+.network-icon {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+}
+
+.network-info > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.network-info strong {
+  color: #cbd5e1;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.network-info span {
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   NETWORK BUTTON
+========================================= */
+
+.network-button {
+  width: 100%;
+  min-height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 11px;
+
+  border: 1px solid #263449;
+  border-radius: 7px;
+
+  background: #111827;
+  color: #94a3b8;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.network-button:hover {
+  border-color: #3b82f6;
+  background: #172033;
+  color: #cbd5e1;
+}
+
+
+/* =========================================
+   DASHBOARD SECTION
+========================================= */
+
+.dashboard-section {
+  width: 100%;
+}
+
+.dashboard-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 13px;
+}
+
+.dashboard-section-eyebrow {
+  margin: 0 0 4px;
+
+  color: #475569;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.dashboard-section-header h2 {
+  margin: 0;
+
+  color: #f1f5f9;
+
+  font-size: 17px;
+  font-weight: 650;
+}
+
+
+/* =========================================
+   VIEW ALL
+========================================= */
+
+.view-all-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 7px 10px;
+
+  border: 1px solid #263449;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #64748b;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.view-all-button:hover {
+  border-color: #334155;
+  background: #111827;
+  color: #cbd5e1;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.dashboard-empty {
+  min-height: 170px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #1e293b;
+  border-radius: 11px;
+
+  background: #0f172a;
+
+  text-align: center;
+}
+
+.dashboard-empty svg {
+  margin-bottom: 9px;
+
+  color: #60a5fa;
+}
+
+.dashboard-empty p {
+  margin: 0 0 5px;
+
+  color: #cbd5e1;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.dashboard-empty span {
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   EMERGENCY LIST
+========================================= */
+
+.dashboard-emergencies {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* =========================================
+   EMERGENCY CARD
+========================================= */
+
+.dashboard-emergency-card {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 14px 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #0f172a;
+  color: #e5e7eb;
+
+  font-family: inherit;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.dashboard-emergency-card:hover {
+  background: #111827;
+  border-color: #334155;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================
+   EMERGENCY ICON
+========================================= */
+
+.dashboard-emergency-icon {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+
+/* =========================================
+   EMERGENCY CONTENT
+========================================= */
+
+.dashboard-emergency-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.dashboard-emergency-top {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 5px;
+}
+
+.dashboard-emergency-top h3 {
+  margin: 0;
+
+  color: #f1f5f9;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  text-transform: capitalize;
+}
+
+.dashboard-emergency-content > p {
+  margin: 0 0 7px;
+
+  overflow: hidden;
+
+  color: #64748b;
+
+  font-size: 10px;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   EMERGENCY META
+========================================= */
+
+.dashboard-emergency-meta {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  color: #475569;
+
+  font-size: 9px;
+}
+
+.dashboard-emergency-meta span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.dashboard-emergency-meta svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   EMERGENCY RIGHT
+========================================= */
+
+.dashboard-emergency-right {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  color: #475569;
+}
+
+
+/* =========================================
+   BADGES
+========================================= */
+
+.dashboard-page .emergency-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.dashboard-page .emergency-severity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 7px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+
+/* =========================================
+   STATUS COLORS
+========================================= */
+
+.status-active {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.status-acknowledged {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+}
+
+.status-resolved {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+
+
+/* =========================================
+   SEVERITY COLORS
+========================================= */
+
+.severity-high {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.severity-medium {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+}
+
+.severity-low {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .safety-network-card {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .dashboard-page {
+    padding: 22px 18px 35px;
+  }
+
+  .dashboard-header {
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .sos-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sos-button {
+    width: 100%;
+  }
+
+  .dashboard-emergency-card {
+    align-items: flex-start;
+  }
+
+  .dashboard-emergency-right {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+  .dashboard-page {
+    padding: 18px 14px 30px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .connection-badge {
+    align-self: flex-start;
+  }
+
+  .sos-card {
+    padding: 17px;
+  }
+
+  .sos-content {
+    align-items: flex-start;
+  }
+
+  .sos-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .dashboard-section-header {
+    align-items: flex-end;
+  }
+
+  .dashboard-emergency-card {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .dashboard-emergency-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .dashboard-emergency-content > p {
+    white-space: normal;
+  }
+
+  .dashboard-emergency-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .dashboard-emergency-right {
+    display: none;
+  }
+}

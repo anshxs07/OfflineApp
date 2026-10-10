@@ -1,0 +1,544 @@
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.emergency-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.78);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.emergency-modal {
+  width: 100%;
+  max-width: 500px;
+
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+
+  border: 1px solid #334155;
+  border-radius: 15px;
+
+  background: #0f172a;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.5);
+
+  animation: emergencyModalIn 0.2s ease-out;
+}
+
+@keyframes emergencyModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.emergency-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 20px;
+
+  border-bottom: 1px solid #1e293b;
+}
+
+.emergency-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.emergency-modal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 10px;
+
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.emergency-modal-title h2 {
+  margin: 0 0 4px;
+
+  color: #f8fafc;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.emergency-modal-title p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.emergency-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 1px solid #334155;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #94a3b8;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.emergency-modal-close:hover {
+  background: #1e293b;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+.emergency-modal-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   OFFLINE NOTICE
+========================================= */
+
+.emergency-modal .emergency-offline-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  width: auto;
+  box-sizing: border-box;
+
+  margin: 16px 20px 0;
+  padding: 12px 13px;
+
+  border: 1px solid rgba(251, 146, 60, 0.25);
+  border-radius: 9px;
+
+  background: rgba(124, 45, 18, 0.14);
+
+  color: #fb923c;
+}
+
+.emergency-modal .emergency-offline-notice > svg {
+  width: 17px;
+  height: 17px;
+
+  flex: 0 0 17px;
+
+  margin-top: 2px;
+
+  color: #fb923c;
+
+  pointer-events: none;
+}
+
+.emergency-modal .emergency-offline-notice > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+
+  min-width: 0;
+  flex: 1;
+}
+
+.emergency-modal .emergency-offline-notice strong {
+  display: block;
+
+  margin: 0;
+
+  color: #fdba74;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.emergency-modal .emergency-offline-notice span {
+  display: block;
+
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* =========================================
+   FORM
+========================================= */
+
+.emergency-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  padding: 20px;
+}
+
+.emergency-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.emergency-form-field label {
+  color: #cbd5e1;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   INPUTS + SELECT
+========================================= */
+
+.emergency-form-field input,
+.emergency-form-field select,
+.emergency-form-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #334155;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #111827;
+  color: #f8fafc;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Input */
+
+.emergency-form-field input {
+  height: 42px;
+  padding: 0 12px;
+}
+
+.emergency-form-field input::placeholder {
+  color: #475569;
+}
+
+
+/* Select */
+
+.emergency-form-field select {
+  height: 42px;
+  padding: 0 12px;
+
+  cursor: pointer;
+}
+
+
+/* Textarea */
+
+.emergency-form-field textarea {
+  min-height: 115px;
+
+  padding: 12px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+
+  cursor: text;
+
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+
+/* Focus */
+
+.emergency-form-field input:focus,
+.emergency-form-field select:focus,
+.emergency-form-field textarea:focus {
+  border-color: #3b82f6;
+
+  background: #0f172a;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+
+/* Disabled */
+
+.emergency-form-field input:disabled,
+.emergency-form-field select:disabled,
+.emergency-form-field textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   LOCATION INPUT
+========================================= */
+
+.emergency-location-input {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.emergency-location-input > svg {
+  position: absolute;
+  left: 12px;
+
+  color: #64748b;
+
+  pointer-events: none;
+}
+
+.emergency-location-input input {
+  padding-left: 38px;
+}
+
+
+/* =========================================
+   FORM ACTIONS
+========================================= */
+
+.emergency-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 2px;
+  padding-top: 17px;
+
+  border-top: 1px solid #1e293b;
+}
+
+
+/* =========================================
+   CANCEL BUTTON
+========================================= */
+
+.emergency-cancel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 0 15px;
+
+  border: 1px solid #334155;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #94a3b8;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.emergency-cancel-button:hover {
+  background: #1e293b;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.emergency-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 40px;
+  padding: 0 16px;
+
+  border: 1px solid #dc2626;
+  border-radius: 8px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.emergency-submit-button:hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+
+  transform: translateY(-1px);
+}
+
+.emergency-submit-button:active {
+  transform: translateY(0);
+}
+
+.emergency-submit-button:disabled,
+.emergency-cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================
+   MODAL SCROLLBAR
+========================================= */
+
+.emergency-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.emergency-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.emergency-modal::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+.emergency-modal::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .emergency-modal-overlay {
+    padding: 12px;
+  }
+
+  .emergency-modal {
+    max-height: calc(100vh - 24px);
+    border-radius: 12px;
+  }
+
+  .emergency-modal-header {
+    padding: 16px;
+  }
+
+  .emergency-modal-form {
+    padding: 16px;
+  }
+
+  .emergency-offline-notice {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .emergency-modal-error {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .emergency-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .emergency-cancel-button,
+  .emergency-submit-button {
+    width: 100%;
+  }
+
+  .emergency-modal-title h2 {
+    font-size: 16px;
+  }
+
+  .emergency-modal-title p {
+    font-size: 11px;
+  }
+}
